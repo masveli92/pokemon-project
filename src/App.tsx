@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
+import PokemonListPage from './pages/PokemonListPage';
 
-const App =() => {
+
+const App =  () => {
+
 
   return (
     <div>
-      Let start
+
     </div>
   );
 }
