@@ -1,5 +1,6 @@
 import { IPokemonAbility } from "./IPokemonAbilities"
 import { IPokemonData } from "./IPokemonData"
+import { IPokemonSprites } from "./IPokemonSprites"
 import { IPokemonStats } from "./IPokemonStats"
 import { IPokemonTypes } from "./IPokemonTypes"
 
@@ -20,6 +21,7 @@ export interface IPokemonInfo{
     species: IPokemonData,
     stats: IPokemonStats[],
     types: IPokemonTypes[],
+    sprites: IPokemonSprites,
     weight: number
 
 }

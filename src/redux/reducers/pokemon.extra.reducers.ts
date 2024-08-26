@@ -5,10 +5,10 @@ import { imageService } from "../../services/image.service";
 
 export const loadPokemon = createAsyncThunk(
     'pokemonSlice/loadPokemon',
-    async (_, thunkAPI) => {
+    async (offset:string, thunkAPI) => {
         try {
-            let response = await pokemonService.getAll();
-            return thunkAPI.fulfillWithValue(response.results);
+            let response = await pokemonService.getAll(offset);
+            return thunkAPI.fulfillWithValue(response);
         }  catch (e){
             let er = e as AxiosError;
             return thunkAPI.rejectWithValue(er?.response?.data)

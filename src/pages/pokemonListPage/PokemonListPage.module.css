@@ -1,6 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .pokemonCardContainer{
 display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 
+}
+.paginationContainer{
+    display: flex;
+    justify-content: center;
 }
