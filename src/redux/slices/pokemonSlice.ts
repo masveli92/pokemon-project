@@ -1,19 +1,20 @@
 import { createSlice, isRejected } from "@reduxjs/toolkit";
 import { IPokemonData } from "../../models/IPokemonData";
 import { IPokemonInfo } from "../../models/IPokemonInfo";
-import {loadChoosenPokemon, loadPokemon } from "../reducers/pokemon.extra.reducers";
-
+import {loadChoosenPokemon, loadImage, loadPokemon } from "../reducers/pokemon.extra.reducers";
 
 type PokemonSliceType = {
     pokemon: IPokemonData[],
     choosenPokemon: IPokemonInfo|any,
+    image: string,
     isLoaded: boolean,
     error: string
 }
 
 const pokemonInitState: PokemonSliceType = {
     pokemon: [],
-    choosenPokemon: null,
+    image: '',
+    choosenPokemon: '',
     isLoaded: false,
     error: ''
 }
@@ -34,7 +35,13 @@ export const pokemonSlice = createSlice({
                (state, action)=>{
                    state.choosenPokemon = action.payload;
            })
-           .addMatcher(isRejected(loadPokemon, loadChoosenPokemon),
+           .addCase(
+               loadImage.fulfilled,
+               (state, action ) =>{
+                   state.image = action.payload;
+               }
+           )
+           .addMatcher(isRejected(loadPokemon, loadChoosenPokemon, loadImage),
                (state, action) => {
                     state.error = action.payload as string;
                }
@@ -44,5 +51,6 @@ export const pokemonSlice = createSlice({
 export const pokemonActions = {
     ...pokemonSlice.actions,
     loadPokemon,
-    loadChoosenPokemon
+    loadChoosenPokemon,
+    loadImage
 }

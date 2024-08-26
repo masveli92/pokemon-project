@@ -1,0 +1,9 @@
+.pokemonCard{
+    border: 1px darkslategray solid;
+    width: 18vw;
+    height: 40vh;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

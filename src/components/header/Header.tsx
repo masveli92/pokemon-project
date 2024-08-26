@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
-            <Link to = {'/allPokemon'}> All pokemon Page</Link>
+            <Link to = {'/allPokemon'}> <h2>ALL POKEMON</h2></Link>
         </div>
     );
 };

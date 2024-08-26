@@ -1,13 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { pokemonService } from "../../services/pokemon.service";
 import { AxiosError } from "axios";
+import { imageService } from "../../services/image.service";
 
 export const loadPokemon = createAsyncThunk(
     'pokemonSlice/loadPokemon',
     async (_, thunkAPI) => {
         try {
-            let responce = await pokemonService.getAll();
-            return thunkAPI.fulfillWithValue(responce.results);
+            let response = await pokemonService.getAll();
+            return thunkAPI.fulfillWithValue(response.results);
         }  catch (e){
             let er = e as AxiosError;
             return thunkAPI.rejectWithValue(er?.response?.data)
@@ -19,8 +20,21 @@ export const loadChoosenPokemon = createAsyncThunk(
     'pokemonSlice/loadChoosenPokemon',
     async (name:string, thunkAPI) => {
         try {
-            let responce = await pokemonService.getByName(name);
-            return thunkAPI.fulfillWithValue(responce);
+            let response = await pokemonService.getByName(name);
+            return thunkAPI.fulfillWithValue(response);
+        }  catch (e){
+            let er = e as AxiosError;
+            return thunkAPI.rejectWithValue(er?.response?.data)
+        }
+    }
+)
+
+export const loadImage = createAsyncThunk(
+    'pokemonSlice/loadImage',
+    async (id:string, thunkAPI) => {
+        try {
+           let response = await imageService.getImg(id);
+            return thunkAPI.fulfillWithValue(response);
         }  catch (e){
             let er = e as AxiosError;
             return thunkAPI.rejectWithValue(er?.response?.data)

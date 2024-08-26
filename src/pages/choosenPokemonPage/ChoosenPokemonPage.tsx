@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../redux/store';
-import { pokemonActions } from '../redux/slices/pokemonSlice';
-import ChoosenPokemon from '../components/chosenPokemon/ChoosenPokemon';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { pokemonActions } from '../../redux/slices/pokemonSlice';
+import ChoosenPokemon from '../../components/chosenPokemon/ChoosenPokemon';
 
 
 

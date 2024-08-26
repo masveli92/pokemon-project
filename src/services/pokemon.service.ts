@@ -1,7 +1,12 @@
-import {urls} from "../configs/urls"
+import axios from "axios"
+import {baseURL, urls} from "../configs/urls"
 import { IPokemonInfo } from "../models/IPokemonInfo"
 import { IPokemonRes } from "../models/IPokemonRes"
-import { axiosInstance } from "./axios.service"
+
+const axiosInstance = axios.create({
+    baseURL,
+    headers: {}
+})
 
 const pokemonService = {
     getAll: async (): Promise <IPokemonRes>  => {

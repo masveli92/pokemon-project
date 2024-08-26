@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import {useAppDispatch, useAppSelector } from '../redux/store';
-import { pokemonActions } from '../redux/slices/pokemonSlice';
-import PokemonList from '../components/pokemonList/PokemonList';
+import {useAppDispatch, useAppSelector } from '../../redux/store';
+import { pokemonActions } from '../../redux/slices/pokemonSlice';
+import PokemonList from '../../components/pokemonList/PokemonList';
+import css from './PokemonListPage.module.css'
 
 const PokemonListPage = () => {
 
@@ -12,8 +13,11 @@ const PokemonListPage = () => {
     useEffect(() => {
         dispatch(pokemonActions.loadPokemon());
     }, []);
+
+
+
     return (
-        <div>
+        <div className={css.pokemonCardContainer}>
             {pokemon.map((pokemon, i) =><PokemonList  key ={i} pokemon = {pokemon}/>)}
         </div>
     );

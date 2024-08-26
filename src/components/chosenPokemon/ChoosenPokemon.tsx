@@ -8,9 +8,9 @@ interface IProps{
 const ChoosenPokemon:FC <IProps> = ({choosenPokemon}) => {
     return (
         <div>
-            <div>{choosenPokemon.name}</div>
-            <div>{choosenPokemon.id}</div>
-            <div>{choosenPokemon.weight}</div>
+            <h3>{choosenPokemon.name}</h3>
+            <div>Pokemon id: {choosenPokemon.id}</div>
+            <div>Pokemon weight: {choosenPokemon.weight}</div>
         </div>
     );
 };
