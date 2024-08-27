@@ -8,6 +8,7 @@ const Header = () => {
         <div className={css.container}>
             <Link  className = {css.link} to = {'/allPokemon'}> <h2>ALL POKEMON</h2></Link>
             <Link  className = {css.link} to = {'/ability'}> <h2>ABILITIES</h2></Link>
+            <Link  className = {css.link} to = {'/type'}> <h2>TYPES</h2></Link>
             <SearchInput/>
         </div>
     );

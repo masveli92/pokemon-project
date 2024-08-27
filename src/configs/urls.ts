@@ -13,7 +13,7 @@ const urls = {
     },
     type: {
         base: "/type",
-        byType: (typeName:string):string =>urls.ability.base+ `/` + `${typeName}`
+        byType: (typeName:string):string =>urls.type.base+ `/` + `${typeName}`
     },
     image: {
         main: (id: string):string => `/`+`${id}`+`.png`

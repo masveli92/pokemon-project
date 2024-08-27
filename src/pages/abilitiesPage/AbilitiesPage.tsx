@@ -25,7 +25,6 @@ const AbilitiesPage = () => {
     }, [page]);
 
 
-
     return (
         <div className={css.container}>
             <div className={css.abilityCardBlock}> {abilities.map((ability, i) =><AbilitiesList  key ={i} ability = {ability}/>)} </div>

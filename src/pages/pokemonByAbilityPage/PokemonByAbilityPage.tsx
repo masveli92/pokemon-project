@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { abilitiesActions } from '../../redux/slices/abilitiesSlice';
-import ListByAbility from '../../components/listByAbility/ListByAbility';
+import PokemonListByAbility from '../../components/pokemonListByAbility/PokemonListByAbility';
+
+
 
 const PokemonByAbilityPage = () => {
     let { abilityName } = useParams();
@@ -15,11 +17,9 @@ const PokemonByAbilityPage = () => {
         if (abilityName) dispatch(abilitiesActions.loadByAbility(abilityName))
     }, [abilityName]);
 
-    console.log(ability)
-
     return (
         <div>
-            <ListByAbility ability = {ability}/>
+            <PokemonListByAbility ability = {ability}/>
         </div>
     );
 };
