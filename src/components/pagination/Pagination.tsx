@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import {useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppSelector } from '../../redux/store';
 
+interface IProps{
+    count:number
+}
 
-const Pagination = () => {
+const Pagination:FC<IProps> = ({count}) => {
 
     let [searchParams, setSearchParams] = useSearchParams({page:'1'});
-    let {count} = useAppSelector(state => state.pokemonSlice)
-
+    // let {count} = useAppSelector(state => state.pokemonSlice)
 
 const currentPage = +(searchParams.get('page') || "1")
-const increment = ()=>{
 
+const increment = ()=>{
     let nextPage = (currentPage+1).toString();
     setSearchParams({page:nextPage})
 }
@@ -26,7 +28,7 @@ const decrement = ()=>{
         <div>
             <button disabled={currentPage<=1} onClick={decrement}>previous  </button>
             <span > {currentPage}/{count} </span>
-            <button disabled={currentPage>=66} onClick={increment}>next</button>
+            <button disabled={currentPage>=count} onClick={increment}>next</button>
         </div>
     );
 };

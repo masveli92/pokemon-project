@@ -14,7 +14,7 @@ const PokemonListPage = () => {
     if (page) {offset = (+page*20-20).toString()}
 
 
-    let {pokemonSlice:{pokemon }} = useAppSelector(state => state)
+    let {pokemonSlice:{pokemon, count }} = useAppSelector(state => state)
 
     let dispatch = useAppDispatch();
 
@@ -30,7 +30,7 @@ const PokemonListPage = () => {
     return (
         <div className={css.container}>
            <div className={css.pokemonCardContainer}> {pokemon.map((pokemon, i) =><PokemonList  key ={i} pokemon = {pokemon}/>)} </div>
-           <div className={css.paginationContainer}> <Pagination/> </div>
+           <div className={css.paginationContainer}> <Pagination count={count}/> </div>
         </div>
     );
 };

@@ -7,6 +7,14 @@ const urls = {
         base: "/pokemon",
         byName: (name:string):string =>urls.pokemon.base+ `/` + `${name}`
     },
+    ability: {
+        base: "/ability",
+        byAbility: (abilityName:string):string =>urls.ability.base+ `/` + `${abilityName}`
+    },
+    type: {
+        base: "/type",
+        byType: (typeName:string):string =>urls.ability.base+ `/` + `${typeName}`
+    },
     image: {
         main: (id: string):string => `/`+`${id}`+`.png`
     }
