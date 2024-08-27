@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { IPokemonInfo } from '../../models/IPokemonInfo';
 import css from './ChoosenPokemon.module.css'
+import { Link } from 'react-router-dom';
 
 interface IProps{
     choosenPokemon: IPokemonInfo
@@ -23,8 +24,8 @@ const ChoosenPokemon:FC <IProps> = ({choosenPokemon}) => {
 
             <div className={css.rightBlock}>
                 <div>
-                    <h4>Types</h4>
-                    <ul>{choosenPokemon?.types?.map((type, index) => <li key={index}>{type.type.name}</li>)}</ul>
+                    <h3>Types:</h3>
+                    <div>{choosenPokemon?.types?.map((type, index) => <Link to ={/type/ + type.type.name} key={index}> <h4>{type.type.name} </h4></Link>)}</div>
                 </div>
 
                 <div>
@@ -34,9 +35,9 @@ const ChoosenPokemon:FC <IProps> = ({choosenPokemon}) => {
                 </div>
 
                 <div>
-                    <h4>Abilities:</h4>
-                    <ul>{choosenPokemon?.abilities?.map((ability, index) => <li
-                        key={index}>{ability.ability.name}</li>)}</ul>
+                    <h3>Abilities:</h3>
+                    <div>{choosenPokemon?.abilities?.map((ability, index) => <Link to ={/ability/ + ability.ability.name}
+                        key={index}><h4> {ability.ability.name} </h4></Link>)}</div>
                 </div>
             </div>
             {/*<div>Pokemon weight: {choosenPokemon.weight}</div>*/}
