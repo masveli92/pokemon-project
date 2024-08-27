@@ -10,7 +10,7 @@ interface IProps{
 const TypesList:FC<IProps> = ({type}) => {
     return (
         <div className={css.typeCard}>
-            <Link to={'/type/' + type.name}>
+            <Link className={css.link} to={'/type/' + type.name}>
                 <h3>{type.name}</h3>
             </Link>
         </div>

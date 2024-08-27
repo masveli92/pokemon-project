@@ -9,7 +9,6 @@ interface IProps{
 
 const ChoosenPokemon:FC <IProps> = ({choosenPokemon}) => {
 
-
     return (
         <div className={css.container}>
             <div className={css.leftBlock}>
@@ -25,7 +24,7 @@ const ChoosenPokemon:FC <IProps> = ({choosenPokemon}) => {
             <div className={css.rightBlock}>
                 <div>
                     <h3>Types:</h3>
-                    <div>{choosenPokemon?.types?.map((type, index) => <Link to ={/type/ + type.type.name} key={index}> <h4>{type.type.name} </h4></Link>)}</div>
+                    <div>{choosenPokemon?.types?.map((type, index) => <Link className={css.link} to ={/type/ + type.type.name} key={index}> <h4>{type.type.name} </h4></Link>)}</div>
                 </div>
 
                 <div>
@@ -36,7 +35,7 @@ const ChoosenPokemon:FC <IProps> = ({choosenPokemon}) => {
 
                 <div>
                     <h3>Abilities:</h3>
-                    <div>{choosenPokemon?.abilities?.map((ability, index) => <Link to ={/ability/ + ability.ability.name}
+                    <div>{choosenPokemon?.abilities?.map((ability, index) => <Link className={css.link} to ={/ability/ + ability.ability.name}
                         key={index}><h4> {ability.ability.name} </h4></Link>)}</div>
                 </div>
             </div>

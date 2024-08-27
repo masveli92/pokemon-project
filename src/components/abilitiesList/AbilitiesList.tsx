@@ -12,7 +12,7 @@ const PokemonList:FC<IProps> = ({ability}) => {
 
     return (
         <div className={css.abilityCard}>
-            <Link to={'/ability/' + ability.name}>
+            <Link className={css.link} to={'/ability/' + ability.name}>
                 <h3>{ability.name}</h3>
             </Link>
         </div>

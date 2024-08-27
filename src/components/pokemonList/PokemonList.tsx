@@ -28,7 +28,7 @@ const PokemonList:FC<IProps> = ({pokemon}) => {
 
     return (
         <div className={css.pokemonCard}>
-            <Link to={'/pokemon/' + pokemon.name}>
+            <Link className={css.link} to={'/pokemon/' + pokemon.name}>
                 {/*<img src={pokemonImage} alt={pokemonId}/>*/}
                 <img src={path} alt={pokemonId}/>
                 <h3>{pokemon.name}</h3>
